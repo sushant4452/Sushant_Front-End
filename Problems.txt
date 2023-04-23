@@ -1,0 +1,9 @@
+    There are a few problems with the code:
+
+    The setSelectedIndex function is being called incorrectly in the List component. It should be invoked as setSelectedIndex(null) instead of using an assignment operator.
+    The isSelected prop passed to SingleListItem should be a boolean value, but it is currently set to selectedIndex, which is a state variable.
+    This will cause the background color of all list items to be green when an item is selected, rather than just the selected item.
+
+    
+    The propTypes definition for items in WrappedListComponent is incorrect. It should be PropTypes.arrayOf(PropTypes.shape({...})), not PropTypes.array(PropTypes.shape({...})).
+    The defaultProps for items in WrappedListComponent should be an empty array ([]), not null.

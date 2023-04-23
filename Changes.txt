@@ -1,0 +1,25 @@
+    
+    Removed the WrappedSingleListItem and WrappedListComponent components and combined them into a single List component for simplicity.
+
+    Fixed the call to setSelectedIndex in useEffect by removing the assignment operator.
+
+    Updated the isSelected prop passed to SingleListItem to use selectedIndex === index to compare the selected index with the current index.
+
+    Added a key prop to the SingleListItem component to optimize rendering.
+
+    Updated the propTypes definition for items in List to use PropTypes.arrayOf.
+
+    Changed the defaultProps for items in List to an empty array ([]).
+    
+    
+    Removed unnecessary useState:
+    In the current code, there is no need to use setSelectedIndex to initialize the state, and it can be removed. Instead, the initial value of selectedIndex can be set to null directly in the useState call.
+
+    Fixed the isSelected prop:
+    The isSelected prop is passed as a boolean value, but in the SingleListItem component it is used as the value for the backgroundColor property, which expects a string. Therefore, we need to modify it to pass the string value 'green' or 'red' depending on the boolean value of isSelected.
+
+    Added key prop to list items:
+    In the mapped list items, a key prop should be added to each SingleListItem element to optimize performance and prevent warning messages.
+
+    Destructured props in SingleListItem component:
+    We can further optimize the SingleListItem component by destructuring the props directly in the function signature, instead of accessing them via props.
